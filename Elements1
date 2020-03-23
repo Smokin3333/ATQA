@@ -1,0 +1,146 @@
+Элементы Registration:
+   
+   1) fillAuthenticationForm
+   input fillLogin
+   input fillPassword
+   buttonLogIn
+   принимает значение String
+   Если fillLogin и fillPassword == true
+   Возвращает переход на станицу "Home page"
+   Если fillLogin и fillPassword == false
+   Возвращает модальное окно "Can`t Find Account"
+   
+   2) linkSignUp
+   принимает нажатие на link "Sign up"
+   Возвращает chooseCreate page
+   
+   3) chooseCreate
+   button createNewAccount
+   button logIn
+   принимает нажатие на одну из кнопок
+   если нажать button createNewAccount
+   Возвращает fillContactForm
+   если нажать button logIn
+   Возвращает Authenticationform
+   
+   4) fillContactForm
+   4.1 buttonNext
+   if  (intPhone = true) PageEnterCode
+   else if (StringEmail = true) PageEnterCode
+   else text "Please try again"
+   
+   4.2. radioButtonPhone (int)
+   inputPhone
+   принимает int Phone
+   Возвращает "buttonNext"
+   
+   4.3. radioButtonEmail (String)
+   inputEmail
+   принимает String Email
+   Возвращает "buttonNext"
+   
+   5) PageEnterCode
+   5.1 buttonNext
+   if  (int Code = true) PageNameAndPassword
+   else text "The code not true"
+   
+   5.2 fillCode
+   inputCode
+   принимает int Code
+   
+   5.3 linkRequestANewOne
+   linkRequest
+   возвращает int Code
+   
+   6) PageNameAndPassword
+   
+   6.1 buttonContinue
+   
+   if  (inputName  = true and InputPass = true) Page "Add Your Birthday"
+   else text "Please try again"
+   
+   6.2. fillRegistrationForm (String)
+   inputYourName
+   input InputPass
+   checkbox SavePassword (true/false)
+   принимает String inputName and String InputPass
+   Возвращает buttonContinue
+   
+   
+   7) Page "Add Your Birthday"
+   
+   7.1 buttonNextPage
+   Принимает Years
+   Возвращает  if (Years >= 16) PageWelcome
+   
+   7.2. buttonYourBirthday (int)
+   int Years
+   int TodayYears = 2020;
+   radioButtonMonth
+   radioButtonDay
+   radioButtonYears
+   Years = TodayYears - radioButtonYears
+   принимает значение радиокнопок месяц / день / год типа int 
+   Возвращает  if (Years > 6) buttonNextPage
+               else text "You need to enter the date you were born"
+   
+   8) PageWelcome
+   
+   8.1 buttonNextPageFind
+   Принимает clikpageFind boolean
+   Возвращает  if (clikpageFind = true) pageFindFriends
+   
+   8.2. linkChangeUsername ()
+   Принимает clikUserName boolean
+   Возвращает  if (clikUserName = true) pageChangeUsername
+   
+   9) PageFindFriend
+   
+   9.1 linkSkip
+   Принимает clikSkipFindFriend boolean
+   Возвращает  if (clikSkipFindFriend = true) modalWindow
+   
+   9.2. linkConnectToFacebook
+   Принимает clikConnectToFacebook boolean
+   Возвращает  if (clikConnectToFacebook = true) pagefillAuthenticationFormFromFacebook
+   9.3 modalWindow
+   linkFollowFriends boolean
+   linkSkipFollow boolean
+   if (linkFollowFriends = true) pageFollowFriends
+   else if (linkSkipFollow = true) pageAddPhoto         
+			   
+   10) pageAddPhoto
+   
+   10.1 linkAddPhoto
+   Принимает file type .jpg
+   Возвращает pagePeople
+   
+   10.2. linkSkipAddPhoto
+   Принимает clikSkipAddPhoto boolean
+   Возвращает  if (clikSkipAddPhoto = true) pagePeople
+			   
+   11) pagePeople
+   
+   11.1 linkFinishSteps
+   Принимает clikFinishSteps
+   Возвращает  if (clikFinishSteps = true) HomePage
+   
+   11.2. linkConnect
+   Принимает  linkConnectFacebook boolean
+   Принимает  linkConnectContact boolean
+   Возвращает  if ( linkConnectToFacebook = true) pagefillAuthenticationFormFromFacebook
+               else if ( linkConnectContact = true)
+			   requestPermissionToContact
+              
+   11.3. boxPeopleAccounts
+   Принимает clikFollow boolean
+   Принимает clikCancel boolean
+   Возвращает  if (clikFollow = true) подписка на данный аккаунт
+               if (clikCancel = true) удаление данного аккаунта из ленты и добавление нового аккаунта  
+
+   
+   
+   
+   
+   
+   
